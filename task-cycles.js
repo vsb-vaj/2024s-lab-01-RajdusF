@@ -5,10 +5,18 @@
 // arrayOfMultiples(12, 10) ➞ [12, 24, 36, 48, 60, 72, 84, 96, 108, 120]
 // arrayOfMultiples(17, 6) ➞ [17, 34, 51, 68, 85, 102]
 
-// Your code:
 const arrayOfMultiples = (num, length) => {
-    // ... write code ...
-};
+  let nums = []
+  for (let i = 0; i < length; i++) {
+    nums[i] = num * (i + 1)
+  }
+  return nums
+}
+
+console.log("1 =================================")
+console.log(arrayOfMultiples(7, 5))
+console.log(arrayOfMultiples(12, 10))
+console.log(arrayOfMultiples(17, 6))
 
 // 2 =================================
 // Change direction of array
@@ -18,10 +26,14 @@ const arrayOfMultiples = (num, length) => {
 // changeDirection([]) ➞ []
 // changeDirection([1, 2]) ➞ [2, 1]
 
-// Your code:
 const changeDirection = (array) => {
-// ... write code ...
-};
+  return array.toReversed()
+}
+
+console.log("\n\n2 =================================")
+console.log(changeDirection([0, 1, 2, 3]))
+console.log(changeDirection([]))
+console.log(changeDirection([1, 2]))
 
 // 3 =================================
 // Create function that takes two arrays and return object with two keys - bigger array, sum all numbers
@@ -31,5 +43,22 @@ const changeDirection = (array) => {
 
 // Your code:
 const biggerArray = (array1, array2) => {
-// ... write code ...
-};
+  let sum1 = 0
+  let sum2 = 0
+
+  array1.forEach((element) => {
+    sum1 += element
+  })
+
+  array2.forEach((element) => {
+    sum2 += element
+  })
+
+  return sum1 > sum2
+    ? { array: array1, sum: sum1 }
+    : { array: array2, sum: sum2 }
+}
+
+console.log("\n\n3 =================================")
+console.log(biggerArray([1, 2, 3, 4, 5], [50, 50]))
+console.log(biggerArray([1, 2, 3], [2, 3, 4]))
